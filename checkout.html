@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Checkout — TwinStyle Collective</title>
+  <script>
+    if(!window.tailwind) document.write('<script src="https://cdn.tailwindcss.com"><\/script>');
+  </script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { twin: '#08A4B3' } } } }
+  </script>
+</head>
+<body class="bg-[linear-gradient(180deg,#080808,_#0b0b0b)] text-white">
+  <header class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+    <a href="index.html" class="text-2xl font-extrabold">TwinStyle <span class="text-twin">Collective</span></a>
+    <div class="flex items-center gap-3">
+      <a href="products.html" class="text-gray-300">Back to shop</a>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <h1 class="text-3xl font-bold">Checkout</h1>
+
+    <div id="checkoutArea" class="mt-6 grid md:grid-cols-2 gap-6">
+      <div class="bg-white/5 p-4 rounded-md">
+        <h2 class="font-semibold">Your Items</h2>
+        <div id="checkoutItems" class="mt-4 space-y-3 max-h-64 overflow-auto"></div>
+        <div class="mt-4 flex justify-between">
+          <div class="text-gray-300">Subtotal</div>
+          <div id="subtotal" class="font-semibold">RM0.00</div>
+        </div>
+      </div>
+
+      <div class="bg-white/5 p-4 rounded-md">
+        <h2 class="font-semibold">Payment & Shipping</h2>
+
+        <label class="mt-3 flex items-center gap-3">
+          <input type="radio" name="payment" value="maybank" class="radio-pay">
+          <span>Maybank Transfer</span>
+        </label>
+        <label class="mt-2 flex items-center gap-3">
+          <input type="radio" name="payment" value="tng" class="radio-pay">
+          <span>Touch 'n Go</span>
+        </label>
+        <label class="mt-2 flex items-center gap-3">
+          <input type="radio" name="payment" value="cod" class="radio-pay">
+          <span>Cash on Delivery (COD)</span>
+        </label>
+
+        <label class="mt-4 block">
+          <span class="text-gray-300">Requirement (optional)</span>
+          <textarea id="reqText" class="mt-2 w-full p-2 rounded-md bg-transparent border border-white/10" placeholder="Contoh: Balut hadiah, hantar cepat, etc."></textarea>
+        </label>
+
+        <div class="mt-6 flex gap-3">
+          <button id="placeOrder" class="bg-twin px-4 py-2 rounded-md text-black">Place Order</button>
+          <button id="backToShop" class="px-4 py-2 border rounded-md">Back</button>
+        </div>
+
+        <div id="checkoutMsg" class="mt-4 text-sm text-green-300 hidden"></div>
+      </div>
+    </div>
+  </main>
+
+   <!-- Footer -->
+<footer class="border-t mt-12">
+  <div class="max-w-6xl mx-auto px-4 py-6 flex flex-col items-center space-y-4 md:flex-row md:justify-center md:space-y-0 md:space-x-6">
+
+    <!-- Social Icons -->
+    <div class="flex items-center justify-center space-x-4">
+      <a href="https://facebook.com/muhammad.nazril.98/" target="_blank"
+         class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-600 text-white hover:bg-blue-700 transition"
+         title="Facebook">f</a>
+
+      <a href="https://instagram.com/nazril_safwan" target="_blank"
+         class="w-8 h-8 flex items-center justify-center rounded-full bg-gradient-to-tr from-pink-500 via-purple-500 to-yellow-400 text-white hover:opacity-90 transition"
+         title="Instagram">ig</a>
+
+      <a href="https://wa.me/60189445121" target="_blank"
+         class="w-8 h-8 flex items-center justify-center rounded-full bg-green-500 text-white hover:bg-green-600 transition"
+         title="WhatsApp">wa</a>
+    </div>
+
+    <!-- Text -->
+    <div class="text-sm text-gray-200 font-extrabold text-center">
+      Powered By <span class="text-twin">TechTwin</span> <span class="text-white">Studio</span>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

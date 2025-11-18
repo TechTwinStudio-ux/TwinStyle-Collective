@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TwinStyle Collective — Home</title>
+
+  <!-- Tailwind CDN + custom theme -->
+  <script>
+    tailwind = window.tailwind;
+    if(!tailwind) {
+      document.write('<script src="https://cdn.tailwindcss.com"><\/script>');
+    }
+  </script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            twin: '#08A4B3',
+            'metal-black': '#0b0b0b',
+            twinsoft: '#0fb7c4'
+          }
+        }
+      }
+    }
+  </script>
+  <meta name="description" content="TwinStyle Collective — Made to stand out" />
+</head>
+<body class="min-h-screen bg-[linear-gradient(180deg,#080808,_#0b0b0b)] text-white font-sans">
+
+  <!-- HEADER -->
+  <header class="w-full sticky top-0 z-40 bg-transparent backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="text-2xl font-extrabold tracking-tight text-twinsoft">TwinStyle <br><span class="text-white">Collective</span></div>
+      </a>
+
+      <nav id="navDesktop" class="hidden md:flex gap-6 items-center">
+        <a href="index.html" class="text-gray-200 hover:text-white">Home</a>
+        <a href="products.html" class="text-gray-200 hover:text-white">Products</a>
+        <a href="#about" class="text-gray-200 hover:text-white">About</a>
+        <a href="#contact" class="text-gray-200 hover:text-white">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button id="cartBtn" class="relative bg-white/10 hover:bg-white/20 px-3 py-2 rounded-md">
+          <span class="text-xl">🛒</span>
+          <span id="cartCount" class="absolute -top-1 -right-1 bg-twin text-black text-xs px-1 rounded-full">0</span>
+        </button>
+
+        <a id="authBtn" href="login.html" class="bg-twin px-4 py-2 rounded-md text-black font-semibold">Login</a>
+
+        <!-- Mobile hamburger -->
+        <button id="hamburger" class="md:hidden bg-white/10 p-2 rounded-md">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile nav -->
+    <div id="mobileNav" class="hidden md:hidden bg-black/60">
+      <div class="px-4 py-4 flex flex-col gap-3">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a id="mobileAuth" href="login.html">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SLIDER -->
+  <main class="max-w-6xl mx-auto px-4 pt-6 pb-20">
+    <section id="hero" class="relative overflow-hidden rounded-xl">
+      <div id="heroSlides" class="relative h-64 md:h-96 rounded-xl">
+        <!-- slides injected by JS -->
+      </div>
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl"></div>
+
+      <div class="absolute left-6 bottom-8">
+        <h1 id="heroTitle" class="text-3xl md:text-5xl font-extrabold leading-tight">Premium Street & Casual Wear</h1>
+        <p class="mt-2 text-gray-300 font-bold max-w-lg">Made to stand out — Koleksi eksklusif TwinStyle Collective</p>
+        <div class="mt-4">
+          <a href="products.html" class="inline-block bg-twin px-5 py-3 rounded-md text-black font-semibold">Shop Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product showcase (mini slider 3 images) -->
+    <section class="mt-10">
+      <div class="flex items-center justify-between">
+        <h2 class="text-2xl font-bold">Featured</h2>
+        <a href="products.html" class="text-gray-300">View all</a>
+      </div>
+
+      <div id="featSlider" class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- JS inject 3 product images -->
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="mt-12 bg-white/5 rounded-xl p-6 md:p-10 grid md:grid-cols-2 gap-6">
+      <div>
+        <h3 class="text-2xl font-bold">About TwinStyle Collective</h3>
+        <p class="mt-4 text-gray-200">
+          TwinStyle Collective diasaskan untuk mereka yang berani berbeza. Kami menyatukan rekaan
+          moden dan material premium untuk menghasilkan pakaian yang bukan sekadar kelihatan,
+          tetapi memberi keyakinan. Dari streetwear hingga wardrobe staple, setiap helaian direka
+          untuk menonjolkan identiti anda. Made to stand out.
+        </p>
+        <div class="mt-6 flex gap-3">
+          <a href="#contact" class="px-4 py-2 border border-white/10 rounded-md">Get in touch</a>
+          <a href="products.html" class="px-4 py-2 bg-twin rounded-md text-black">Shop collection</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <div class="bg-white/5 p-4 rounded-md">
+          <h4 class="font-semibold">Location</h4>
+          <p class="text-gray-300 mt-2">TwinStyle HQ, Kuala Lumpur, Malaysia</p>
+        </div>
+        <div class="rounded-md overflow-hidden">
+          <!-- Map preview (static) -->
+          <img src="https://via.placeholder.com/800x300?text=Map+Preview" alt="Map preview" class="w-full h-40 object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT PREVIEW -->
+    <section id="contact" class="mt-12 grid md:grid-cols-2 gap-6">
+      <div class="bg-white/5 p-6 rounded-md">
+        <h3 class="text-xl font-bold">Contact Us</h3>
+        <p class="mt-2 text-gray-300">Hubungi kami melalui borang atau terus ke saluran sosial.</p>
+        <ul class="mt-4 text-gray-200 space-y-2">
+          <li>Facebook: TwinStyleFB</li>
+          <li>Instagram: @twinstylecollective</li>
+          <li>WhatsApp: +60 18-944 5121</li>
+        </ul>
+      </div>
+      <div class="bg-white/5 p-6 rounded-md">
+        <form id="contactFormHome" class="flex flex-col gap-3">
+          <input type="text" name="name" placeholder="Nama" required class="p-2 rounded-md bg-transparent border border-white/10">
+          <input type="email" name="email" placeholder="Email" required class="p-2 rounded-md bg-transparent border border-white/10">
+          <textarea name="req" placeholder="Requirement (optional)" class="p-2 rounded-md bg-transparent border border-white/10"></textarea>
+          <button class="mt-2 bg-twin py-2 rounded-md text-black">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- CART MODAL -->
+  <div id="cartModal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
+    <div class="bg-[#0f1724] w-full max-w-2xl p-6 rounded-md">
+      <div class="flex justify-between items-center">
+        <h3 class="text-xl font-bold">Your Cart</h3>
+        <button id="closeCart" class="text-gray-300">×</button>
+      </div>
+      <div id="cartItems" class="mt-4 space-y-3 max-h-64 overflow-auto"></div>
+      <div class="mt-4 flex justify-between items-center">
+        <a href="checkout.html" id="goCheckout" class="bg-twin px-4 py-2 rounded-md text-black">Checkout</a>
+        <button id="clearCart" class="px-4 py-2 border rounded-md">Clear</button>
+      </div>
+    </div>
+  </div>
+
+   <!-- Footer -->
+<footer class="border-t mt-12">
+  <div class="max-w-6xl mx-auto px-4 py-6 flex flex-col items-center space-y-4 md:flex-row md:justify-center md:space-y-0 md:space-x-6">
+
+    <!-- Social Icons -->
+    <div class="flex items-center justify-center space-x-4">
+      <a href="https://facebook.com/muhammad.nazril.98/" target="_blank"
+         class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-600 text-white hover:bg-blue-700 transition"
+         title="Facebook">f</a>
+
+      <a href="https://instagram.com/nazril_safwan" target="_blank"
+         class="w-8 h-8 flex items-center justify-center rounded-full bg-gradient-to-tr from-pink-500 via-purple-500 to-yellow-400 text-white hover:opacity-90 transition"
+         title="Instagram">ig</a>
+
+      <a href="https://wa.me/60189445121" target="_blank"
+         class="w-8 h-8 flex items-center justify-center rounded-full bg-green-500 text-white hover:bg-green-600 transition"
+         title="WhatsApp">wa</a>
+    </div>
+
+    <!-- Text -->
+    <div class="text-sm text-gray-200 font-extrabold text-center">
+      Powered By <span class="text-twin">TechTwin</span> <span class="text-white">Studio</span>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

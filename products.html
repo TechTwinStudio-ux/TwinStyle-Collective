@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Products — TwinStyle Collective</title>
+  <script>
+    if(!window.tailwind) document.write('<script src="https://cdn.tailwindcss.com"><\/script>');
+  </script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { twin: '#08A4B3', 'metal-black':'#0b0b0b' } } } }
+  </script>
+</head>
+<body class="bg-[linear-gradient(180deg,#080808,_#0b0b0b)] text-white">
+
+  <!-- HEADER (same as index) -->
+  <header class="w-full sticky top-0 z-40 bg-transparent">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-extrabold">TwinStyle <span class="text-twin">Collective</span></a>
+      <nav class="hidden md:flex gap-6">
+        <a href="index.html">Home</a>
+        <a href="products.html" class="font-semibold">Products</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="cartBtn2" class="relative bg-white/10 px-3 py-2 rounded-md">🛒 <span id="cartCount2" class="absolute -top-1 -right-1 bg-twin text-black text-xs px-1 rounded-full">0</span></button>
+        <a id="authBtn2" href="login.html" class="bg-twin px-4 py-2 rounded-md text-black">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-10">
+    <h1 class="text-3xl font-bold">Products</h1>
+    <p class="mt-2 text-gray-300">8 pilihan baju — pilih size, warna & quantity.</p>
+
+    <div id="productsGrid" class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- product cards injected by JS -->
+    </div>
+  </main>
+
+  <!-- CART MODAL (reused) -->
+  <div id="cartModal2" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
+    <div class="bg-[#0f1724] w-full max-w-2xl p-6 rounded-md">
+      <div class="flex justify-between items-center">
+        <h3 class="text-xl font-bold">Your Cart</h3>
+        <button id="closeCart2" class="text-gray-300">×</button>
+      </div>
+      <div id="cartItems2" class="mt-4 space-y-3 max-h-64 overflow-auto"></div>
+      <div class="mt-4 flex justify-between items-center">
+        <a href="checkout.html" id="goCheckout2" class="bg-twin px-4 py-2 rounded-md text-black">Checkout</a>
+        <button id="clearCart2" class="px-4 py-2 border rounded-md">Clear</button>
+      </div>
+    </div>
+  </div>
+
+   <!-- Footer -->
+<footer class="border-t mt-12">
+  <div class="max-w-6xl mx-auto px-4 py-6 flex flex-col items-center space-y-4 md:flex-row md:justify-center md:space-y-0 md:space-x-6">
+
+    <!-- Social Icons -->
+    <div class="flex items-center justify-center space-x-4">
+      <a href="https://facebook.com/muhammad.nazril.98/" target="_blank"
+         class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-600 text-white hover:bg-blue-700 transition"
+         title="Facebook">f</a>
+
+      <a href="https://instagram.com/nazril_safwan" target="_blank"
+         class="w-8 h-8 flex items-center justify-center rounded-full bg-gradient-to-tr from-pink-500 via-purple-500 to-yellow-400 text-white hover:opacity-90 transition"
+         title="Instagram">ig</a>
+
+      <a href="https://wa.me/60189445121" target="_blank"
+         class="w-8 h-8 flex items-center justify-center rounded-full bg-green-500 text-white hover:bg-green-600 transition"
+         title="WhatsApp">wa</a>
+    </div>
+
+    <!-- Text -->
+    <div class="text-sm text-gray-200 font-extrabold text-center">
+      Powered By <span class="text-twin">TechTwin</span> <span class="text-white">Studio</span>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
